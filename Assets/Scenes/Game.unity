@@ -209,7 +209,8 @@ GameObject:
   m_Component:
   - component: {fileID: 196725297}
   - component: {fileID: 196725298}
-  - component: {fileID: 196725299}
+  - component: {fileID: 196725301}
+  - component: {fileID: 196725302}
   m_Layer: 5
   m_Name: Positions
   m_TagString: Untagged
@@ -233,7 +234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196725298
@@ -250,7 +251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackCellPrefab: {fileID: 293113967811484046, guid: 93277ed008f0c2048821f32f04bfe5a7, type: 3}
   whiteCellPrefab: {fileID: 5071547388872785469, guid: 2d628e62fe5e1fa41bccaf77980b0506, type: 3}
---- !u!114 &196725299
+  positionsParent: {fileID: 196725297}
+--- !u!114 &196725301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,6 +276,31 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &196725302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196725296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd64f9a391acc549ac2b46be7613451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whitePawnPrefab: {fileID: 7047570573003140792, guid: 7c2e3b338a38dd043a46c5e44e358b03, type: 3}
+  blackPawnPrefab: {fileID: 7047570573003140792, guid: 488b5bcc455369a42b70ed9fc9ef5fcb, type: 3}
+  blackKingPrefab: {fileID: 7047570573003140792, guid: 66132894a4fa7b24097a94b47bf659b1, type: 3}
+  whiteKingPrefab: {fileID: 7047570573003140792, guid: 2501c3c26de3c2348adedaf5fcb00482, type: 3}
+  blackRookPrefab: {fileID: 7047570573003140792, guid: 6482c7c5f17eac5409b7e625001aad10, type: 3}
+  whiteRookPrefab: {fileID: 7047570573003140792, guid: 705e128428e51ea438dc20b084e7bc1b, type: 3}
+  blackKnightPrefab: {fileID: 7047570573003140792, guid: bcef636c19b47aa43ab501d5c5dd7cf0, type: 3}
+  whiteKnightPrefab: {fileID: 7047570573003140792, guid: 17cd2b8c009af224c87e17710800a9a8, type: 3}
+  blackBishopPrefab: {fileID: 7047570573003140792, guid: c827dca80df997b418f31773ad00374e, type: 3}
+  whiteBishopPrefab: {fileID: 7047570573003140792, guid: 70b46631887082a4fb859c1935c51c37, type: 3}
+  blackQueenPrefab: {fileID: 7047570573003140792, guid: 6c1efb2077243fd4a87f6a09cb5bacc2, type: 3}
+  whiteQueenPrefab: {fileID: 7047570573003140792, guid: 23bac65f8254b88479211ef769bb8719, type: 3}
+  board: {fileID: 196725298}
 --- !u!1 &397386676
 GameObject:
   m_ObjectHideFlags: 0

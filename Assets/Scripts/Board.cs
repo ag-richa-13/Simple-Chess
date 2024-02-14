@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class ChessBoard : MonoBehaviour
+public class Board : MonoBehaviour
 {
     [SerializeField] private GameObject blackCellPrefab;
     [SerializeField] private GameObject whiteCellPrefab;
     [SerializeField] private Transform positionsParent;
-
-    private const int boardSize = 8;
-    private GameObject[,] chessboard = new GameObject[boardSize, boardSize];
+    public const int rowIndex = 8;
+    public const int columnIndex = 8;
+    public GameObject[,] chessboard = new GameObject[rowIndex, columnIndex];
 
     private void Start()
     {
@@ -16,9 +16,9 @@ public class ChessBoard : MonoBehaviour
 
     private void CreateChessBoard()
     {
-        for (int row = 0; row < boardSize; row++)
+        for (int row = 0; row < rowIndex; row++)
         {
-            for (int col = 0; col < boardSize; col++)
+            for (int col = 0; col < columnIndex; col++)
             {
                 GameObject cellPrefab = (row + col) % 2 == 0 ? whiteCellPrefab : blackCellPrefab;
                 GameObject cell = Instantiate(cellPrefab, positionsParent);
@@ -26,17 +26,16 @@ public class ChessBoard : MonoBehaviour
 
                 // Calculate position based on row and column
                 float xPos = col;
-                float yPos = boardSize - 1 - row; // Invert row to start from bottom
-                cell.transform.localPosition = new Vector3(xPos, yPos, 0);
+                float yPos = rowIndex - 1 - row; // Invert row to start from bottom
+                cell.transform.localPosition = new Vector2(xPos, yPos);
 
                 chessboard[row, col] = cell;
             }
         }
     }
-
     private string GetCellName(int row, int col)
     {
         string color = (row + col) % 2 == 0 ? "White" : "Black";
-        return $"{color}_Cell_{row}_{col}";
+        return color + "_Square" + row + "_" + col;
     }
 }
